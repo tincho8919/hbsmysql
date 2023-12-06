@@ -104,9 +104,10 @@ const Productos = (req, res) => {
     res.render('productos')
 }
 
-const Articulos = (req, res) => {
-    res.render('articulos');
-  };
+const Articulos= (req, res) => {
+    res.render('articulos')
+}
+
 const Compradb = (req, res) => {
     res.render('compradb')
 }
