@@ -4,13 +4,13 @@ const Usercontroller = require('../controller/Usercontroller.js')
 const { check } = require('express-validator');
 
 
-router.get('/login',Usercontroller.userFormLogin);
+router.get('/logindeuser',Usercontroller.userFormLogin);
 
-router.get('/registro', Usercontroller.userRegister);
+router.get('/registrodeuser',Usercontroller.userRegister);
 
 
 
-router.post('/registro',
+router.post('/registrodeuser',
 [
     check('nombre').isLength({ min: 4 }),
     check('email').isEmail(),
@@ -19,7 +19,7 @@ router.post('/registro',
 
 
 
-router.post('/login',
+router.post('/logindeuser',
 [
     check('email').isEmail(),
     check('password').isLength({ min: 6 }),

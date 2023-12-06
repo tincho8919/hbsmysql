@@ -9,7 +9,7 @@ const userRegistro = async (req, res) => {
 
     if (!errores.isEmpty()) {
         console.log(errores);
-        return res.render('registro', { mensaje: 'Errores en los datos ingresados' });
+        return res.render('registrodeuser', { mensaje: 'Errores en los datos ingresados' });
     }
 
     const salt = bcrypt.genSaltSync(10);
@@ -19,13 +19,13 @@ const userRegistro = async (req, res) => {
         await db.execute('INSERT INTO USUARIOS (nombre , email , password) VALUES (?, ?, ?)', [nombre, email, hash]);
         // Enviar correo de confirmación
         sendConfirmationEmail(email, nombre);
-        return res.render('registro', { mensaje: 'Registro exitoso, te llegará un email con tus datos!' });
+        return res.render('registrodeuser', { mensaje: 'Registro exitoso, te llegará un email con tus datos!' });
     } catch (error) {
         console.error('Error en el registro', error);
         if (error.code === 'ER_DUP_ENTRY') {
-            return res.render('registro', { mensaje: 'El correo electrónico ya está registrado' });
+            return res.render('registrodeuser', { mensaje: 'El correo electrónico ya está registrado' });
         }
-        return res.render('registro', { mensaje: 'Error en el servidor' });
+        return res.render('registrodeuser', { mensaje: 'Error en el servidor' });
     }
 };
 
@@ -67,7 +67,7 @@ const UserLogin = (req, res) => {
 
     if (!errores.isEmpty()) {
         console.log(errores);
-        return res.render('login', { mensaje: 'Errores en los datos ingresados' });
+        return res.render('logindeuser', { mensaje: 'Errores en los datos ingresados' });
     }
 
     let sql = 'SELECT * FROM USUARIOS WHERE email = ?';
@@ -75,7 +75,7 @@ const UserLogin = (req, res) => {
     db.query(sql, [email], (error, result) => {
         if (error) {
             console.error(error);
-            return res.render('login', { mensaje: 'Error en el servidor' });
+            return res.render('logindeuser', { mensaje: 'Error en el servidor' });
         }
 
         if (Array.isArray(result) && result.length > 0) {
@@ -87,18 +87,18 @@ const UserLogin = (req, res) => {
 
                 if (passwordMatch) {
 
-                    return res.render('login', { mensaje: 'Estás logueado' });
+                    return res.render('logindeuser', { mensaje: 'Estás logueado' });
                 } else {
                     
-                    return res.render('login', { mensaje: 'Credenciales inválidas' });
+                    return res.render('logindeuser', { mensaje: 'Credenciales inválidas' });
                 }
             } else {
                 
-                return res.render('login', { mensaje: 'Credenciales inválidas' });
+                return res.render('logindeuser', { mensaje: 'Credenciales inválidas' });
             }
         } else {
             
-            return res.render('login', { mensaje: 'Credenciales inválidas' });
+            return res.render('logindeuser', { mensaje: 'Credenciales inválidas' });
         }
     });
 };
@@ -112,11 +112,11 @@ const UserLogin = (req, res) => {
 
 
 const userFormLogin = (req, res) => {
-    res.render('/login');
+    res.render('logindeuser');
 };
 
 const userRegister = (req, res) => {
-    res.render('/registro');
+    res.render('registrodeuser');
 };
 
 module.exports = {
