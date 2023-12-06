@@ -8,6 +8,7 @@ const path = require ('path')
 const cors =require ('cors')
 const morgan =require ('morgan')
 
+
 const app = express()
 
 const PORT = 8001
@@ -20,12 +21,18 @@ app.use(bodyParser.json());
     res.send("hello words")
 }) */
 
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
-// Configuración de Handlebars
+//1. Configuración de Handlebars
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, '/views'));
-app.use(express.static(__dirname + '/public'))
-hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
+//2. Configuración e ubicación de las vistas
+app.set('views', path.join('views'));
+//3. Configuración de los archivos parciales
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 
 
