@@ -45,7 +45,7 @@ const ventasProductos = (req, res) => {
 const eliminarProducto = (req, res) => {
     const productId = req.params.id;
 
-    db.query('DELETE FROM productos WHERE id = ?', [productId], (err, result) => {
+    db.query('DELETE FROM PRODUCTOS WHERE id = ?', [productId], (err, result) => {
         if (err) {
             console.error('Error al eliminar el producto', err);
             res.status(500).send('Error en el servidor');
@@ -63,7 +63,7 @@ const comprarProducto = (req, res) => {
     const productId = req.params.id;
 
     // Obtener el producto
-    db.query('SELECT * FROM productos WHERE id = ?', [productId], (errProducto, productos) => {
+    db.query('SELECT * FROM PRODUCTOS WHERE id = ?', [productId], (errProducto, productos) => {
         if (errProducto) {
             console.error('Error al obtener el producto', errProducto);
             return res.status(500).send('Error en el servidor');
@@ -77,7 +77,7 @@ const comprarProducto = (req, res) => {
 
         // Registrar la venta en la tabla de ventas
         const fechaVenta = new Date(); // Obtener la fecha actual
-        db.query('INSERT INTO ventas (nombre ,fecha, precio, total) VALUES (?, ?, ?, ?)', [producto.nombre, fechaVenta, producto.precio, producto.precio], (errInsert, resultInsert) => {
+        db.query('INSERT INTO VENTAS (nombre ,fecha, precio, total) VALUES (?, ?, ?, ?)', [producto.nombre, fechaVenta, producto.precio, producto.precio], (errInsert, resultInsert) => {
             if (errInsert) {
                 console.error('Error al insertar la venta', errInsert);
                 return res.status(500).send('Error en el servidor');
