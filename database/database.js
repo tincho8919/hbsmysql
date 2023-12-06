@@ -6,12 +6,11 @@ const mysql = require("mysql2");
 dotenv.config();
 
 const db = mysql.createConnection({
-    host:process.env.MYSQLHOST,
-    user:process.env.MYSQLUSER,
-    password:process.env.MYSQLPASSWORD,
-    port:process.env.PMYSQLPORT,
-    database:process.env.MYSQLDATABASE
-
+    host: 'monorail.proxy.rlwy.net',
+    user: 'root',
+    password: 'A42bcD3Fg4Ba5gaCcBHbdcgC6GC215fA',
+    port: 13065,
+    database: 'railway'
 });
 
 db.connect((err) =>{
@@ -20,7 +19,7 @@ db.connect((err) =>{
         console.error('Error en la conexión a la base de datos:', err);
         return;
       }
-    console.log(`Conexion a la database ${process.env.DATABASE} conexion exitosa`);
+    console.log(`Conexion a la database ${'railway'} conexion exitosa`);
         
 });
 
