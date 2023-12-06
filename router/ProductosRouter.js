@@ -8,7 +8,7 @@ const route = express.Router();
 
 route.get('/productos',Productoscontroller.Productos);
 
-route.get('/articulos',Productoscontroller.Articulos);
+route.get('/articulos',Productoscontroller.articulos);
 
 route.post('/articulos',Productoscontroller.createProducto);
 
