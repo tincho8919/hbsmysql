@@ -19,7 +19,7 @@ const userRegistro = async (req, res) => {
         await db.execute('INSERT INTO USUARIOS (nombre , email , password) VALUES (?, ?, ?)', [nombre, email, hash]);
         // Enviar correo de confirmación
         sendConfirmationEmail(email, nombre);
-        return res.render('registrodeuser', { mensaje: 'Registro exitoso, te llegará un email con tus datos!' });
+        return res.render('/registrodeuser', { mensaje: 'Registro exitoso, te llegará un email con tus datos!' });
     } catch (error) {
         console.error('Error en el registro', error);
         if (error.code === 'ER_DUP_ENTRY') {
