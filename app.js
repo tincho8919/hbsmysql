@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 
 
 // Configuración de Handlebars
-app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'))
