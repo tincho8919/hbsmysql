@@ -8,9 +8,9 @@ const route = express.Router();
 
 route.get('/productos',Productoscontroller.Productos);
 
-route.get('/articulos',Productoscontroller.Articulos);
+route.get('/articulosdeguitarra',Productoscontroller.Articulosdeguitarra);
 
-route.post('/articulos',Productoscontroller.createProducto);
+route.post('/articulosdeguitarra',Productoscontroller.createProducto);
 
 route.post('/productos',Productoscontroller.createProducto);
 

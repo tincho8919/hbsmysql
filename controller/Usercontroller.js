@@ -112,11 +112,11 @@ const UserLogin = (req, res) => {
 
 
 const userFormLogin = (req, res) => {
-    res.render('login');
+    res.render('/login');
 };
 
 const userRegister = (req, res) => {
-    res.render('registro');
+    res.render('/registro');
 };
 
 module.exports = {

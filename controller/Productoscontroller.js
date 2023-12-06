@@ -104,8 +104,8 @@ const Productos = (req, res) => {
     res.render('productos')
 }
 
-const Articulos= (req, res) => {
-    res.render('articulos')
+const Articulosdeguitarra= (req, res) => {
+    res.render('articulosdeguitarra')
 }
 
 const Compradb = (req, res) => {
@@ -113,7 +113,7 @@ const Compradb = (req, res) => {
 }
 module.exports ={
     Productos,
-    Articulos,
+    Articulosdeguitarra,
     createProducto,
     eliminarProducto,
     ventasProductos,

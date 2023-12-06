@@ -9,6 +9,7 @@ const cors =require ('cors')
 const morgan =require ('morgan')
 
 
+
 const app = express()
 
 const PORT = 8001
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
+
 
 //1. Configuración de Handlebars
 app.set('view engine', 'hbs');
