@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    flex: 1; /* Hace que la sección principal (contenido) ocupe el espacio restante */
+  }
+
+  footer {
+    width: 100%;
+    background-color: rgb(240, 174, 116);
+    position: relative; /* Agregado para posicionarlo correctamente */
+    bottom: 0;
+    padding: 10px;  /* Posiciona el pie de página en la parte inferior */
+    text-align: center;  
+  }
+  
+  /* Resto de tu estilo para el footer */
+  

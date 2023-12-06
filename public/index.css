@@ -1,0 +1,183 @@
+
+.slider-container {
+    position: relative;
+    max-width: 800px; /* Ajusta el ancho del carrusel según tus necesidades */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: 400px;
+    width: 100%;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+body {
+    background-color: #4c7aac;
+}
+
+.productos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 400px;
+}
+
+.producto img {
+    max-width: 100%;
+    height: 400px;
+    width: 100%;
+
+}
+
+.agregar-al-carrito {
+    background-color: #3d1fc4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.agregar-al-carrito:hover {
+    background-color: #0056b3;
+}
+.mostrar-detalles{
+    padding: auto;
+    margin-bottom: 5px;
+    background-color: rgb(52, 23, 218);
+    color: #fff;
+    border-radius: 15px 15px 15px;
+}
+.detalles-hidden{
+
+    display: none;
+    
+}
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Estilos generales para las tarjetas y las imágenes */
+  .producto {
+    width: 100%;
+    max-width: 300px; /* Tamaño máximo para evitar que las tarjetas sean demasiado anchas */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .producto img {
+    width: 100%;
+    height: auto; 
+  
+  }
+  
+  /* Estilos específicos para pantallas más grandes (tabletas) */
+@media (min-width: 600px) {
+    .productos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .producto {
+      flex: 1;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;/* Restablece el tamaño máximo para pantallas más grandes */
+    }
+  }
+  
+  
+  /* Nuevas reglas para pantallas pequeñas */
+  @media (max-width: 599px) {
+      .productos-container {
+          justify-content: center;
+          display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .producto {
+        width: 90%; /* Ajusta el ancho de la tarjeta para que se vea bien en pantallas pequeñas */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+  
+  /* Agrega más reglas de medios según sea necesario para otros tamaños de pantalla */
+  
+/* Estilos específicos para pantallas más grandes (computadoras de escritorio) */
+@media (min-width: 1200px) {
+ 
+    .productos-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+    }
+    
+    
+  
+  .producto {
+    width: 100%;
+    max-width: 300px; /* Tamaño máximo para evitar que las tarjetas sean demasiado anchas */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 300px; 
+  
+  }
+}

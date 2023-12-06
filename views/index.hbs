@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <section>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="/carrusel/1.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="/carrusel/2.jpg" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="/carrusel/3.jpg" alt="Slide 3">
+                </div>
+                <div class="slide">
+                    <img src="/carrusel/4.jpg" alt="Slide 4">
+                </div>
+            </div>
+            <button class="prev-btn" onclick="changeSlide(-1)">Prev</button>
+            <button class="next-btn" onclick="changeSlide(1)">Next</button>
+    </section>
+    <section> <div class="productos-container">
+        <div class="producto">
+            <img src="/indeximg/1.jpg" alt="Producto 1">
+            <h2>Super Combo</h2>
+            <p>Precio: $554000.99</p>
+            <button class="mostrar-detalles">Mostrar detalles</button>
+            <div class="detalles-hidden">
+                <p>Detalles: Alta calidad de sonido extrem.</p>
+            </div>
+            <div class="container">
+                <form action="/ventas" method="post" id="miFormulario">
+                    <input type="hidden" name="nombre" value="Super Combo">
+                    <input type="hidden" name="imagen" value="/indeximg/1.jpg">
+                    <input type="hidden" name="precio" value="554000.99">
+                    <div class="text-center">
+                        <button type="submit" class="agregar-al-carrito">Agregar al carrito</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="/indeximg/2.jpg" alt="Producto 2">
+            <h2>super off</h2>
+            <p>Precio: $554000.99</p>
+            <button class="mostrar-detalles">Mostrar detalles</button>
+            <div class="detalles-hidden">
+                <p>Detalles: super oferta!.</p>
+            </div>
+            <div class="container">
+                <form action="/ventas" method="post" id="miFormulario">
+                    <input type="hidden" name="nombre" value="super off">
+                    <input type="hidden" name="imagen" value="/indeximg/2.jpg">
+                    <input type="hidden" name="precio" value="554000.99">
+                    <div class="text-center">
+                        <button type="submit" class="agregar-al-carrito">Agregar al carrito</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="/indeximg/3.jpg" alt="Producto 3">
+            <h2>Remate</h2>
+            <p>Precio: $354000.99</p>
+            <button class="mostrar-detalles">Mostrar detalles</button>
+            <div class="detalles-hidden">
+                <p>Detalles: Remate super cool.</p>
+            </div>
+            <div class="container">
+                <form action="/ventas" method="post" id="miFormulario">
+                    <input type="hidden" name="nombre" value="Remate">
+                    <input type="hidden" name="imagen" value="/indeximg/3.jpg">
+                    <input type="hidden" name="precio" value="354000.99">
+                    <div class="text-center">
+                        <button type="submit" class="agregar-al-carrito">Agregar al carrito</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="producto">
+            <img src="/indeximg/4.jpg" alt="Producto 4">
+            <h2>precio off</h2>
+            <p>Precio: $1885679.99</p>
+            <button class="mostrar-detalles">Mostrar detalles</button>
+            <div class="detalles-hidden">
+                <p>Detalles: Imperdible offerta.</p>
+            </div>
+            <div class="container">
+                <form action="/ventas" method="post" id="miFormulario">
+                    <input type="hidden" name="nombre" value="precio off">
+                    <input type="hidden" name="imagen" value="/indeximg/4.jpg">
+                    <input type="hidden" name="precio" value="1885679.99">
+                    <div class="text-center">
+                        <button type="submit" class="agregar-al-carrito">Agregar al carrito</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

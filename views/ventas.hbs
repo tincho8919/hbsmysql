@@ -1,0 +1,96 @@
+<!-- index.hbs -->
+
+<div class="container mt-5 text-center">
+    <h1>Carrito de compras</h1>
+    {{!-- <p>Saldo actual: ${{ saldo }}</p> --}}
+</div>
+
+<div class="productos-container">
+    {{#if dato.length}}
+        {{#each dato}}
+            <div class="card" style="width: 20rem;">
+                <img src={{ imagen }} class="card-img-top" alt="imagen del Producto">
+                <div class="card-body">
+                    <h5 class="card-title">{{ nombre }}</h5>
+                    <p class="card-text">${{ precio }}</p>
+                    <form action="/delete/{{ id }}" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-borrar-producto">Borrar</button>
+                    </form> 
+                    <form action="/comprar/{{ id }}" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-primary">Comprar</button>
+                    </form> 
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No hay productos en el carrito.</p>
+    {{/if}}
+</div>
+
+<footer class="footer">
+</footer>
+
+<style>
+    .productos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: rgb(240, 174, 116);
+        position: fixed;
+        bottom: 0;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    }
+</style>
+
+<script>
+    const botonesBorrar = document.querySelectorAll('.btn-borrar-producto');
+
+    botonesBorrar.forEach((boton) => {
+        boton.addEventListener('click', function () {
+            const productoId = boton.getAttribute('data-producto-id');
+
+            // Realizar una solicitud a tu servidor para eliminar el producto con el productoId
+            fetch(`/eliminar-producto/${productoId}`, {
+                method: 'DELETE',
+            })
+                .then((response) => {
+                    if (response.status === 200) {
+                        return response.json();
+                    } else {
+                        throw new Error(`Error deleting product: ${response.status}`);
+                    }
+                })
+                .then((data) => {
+                    if (data.message === 'Producto eliminado con éxito') {
+                        // Actualiza la vista o recarga la página para mostrar los productos actualizados
+                        location.reload();
+                    } else {
+                        console.error('Error al eliminar el producto');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error al eliminar el producto', error);
+                });
+        });
+    });
+</script>

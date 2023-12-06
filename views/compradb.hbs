@@ -1,0 +1,80 @@
+<div class="color">
+    <h1 class="color">Felicidades compraste producto :</h1>
+</div>
+
+<div class="main-container">
+    {{#if dato.length}}
+        {{#each dato}}
+            <div class="card" style="width: 20rem;">
+                <img src={{ imagen }} class="card-img-top" alt="imagen del Producto">
+                <div class="card-body">
+                    <h5 class="card-title">{{ nombre }}</h5>
+                    <p class="card-text">${{ precio }}</p>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No hay productos.</p>
+    {{/if}}
+    <div class="color">
+        <p>Se cargó en la base de datos con éxito!</p>
+    </div>
+</div>
+
+<footer class="footer"></footer>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        height: 30rem;
+        margin: 10px;
+    }
+
+    img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .color {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: green;
+    }
+
+    .footer {
+        width: 100%;
+        background-color: rgb(240, 174, 116);
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    .navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+</style>
+
+
+
+
+
