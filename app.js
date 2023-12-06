@@ -30,7 +30,7 @@ app.use(cors());
 //1. Configuración de Handlebars
 app.set('view engine', 'hbs');
 //2. Configuración e ubicación de las vistas
-app.set('views', path.join('views'));
+app.set('views', path.join(__dirname, 'views'));
 //3. Configuración de los archivos parciales
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
