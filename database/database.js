@@ -6,11 +6,11 @@ const mysql = require("mysql2");
 dotenv.config();
 
 const db = mysql.createConnection({
-    host: 'monorail.proxy.rlwy.net',
-    user: 'root',
-    password: 'A42bcD3Fg4Ba5gaCcBHbdcgC6GC215fA',
-    port: '13065',
-    database: 'railway'
+    host: 'btwsv83ir0l3gtanfxa6-mysql.services.clever-cloud.com',
+    user: 'ucn78jpaebdkwg7g',
+    password: 'W4xJbcrwenpuK8Bi4OPb',
+    port: '3306',
+    database: 'btwsv83ir0l3gtanfxa6'
 });
 
 db.connect((err) =>{
@@ -19,7 +19,7 @@ db.connect((err) =>{
         console.error('Error en la conexión a la base de datos:', err);
         return;
       }
-    console.log(`Conexion a la database ${'railway'} conexion exitosa`);
+    console.log(`Conexion a la database ${'btwsv83ir0l3gtanfxa6'} conexion exitosa`);
         
 });
 
