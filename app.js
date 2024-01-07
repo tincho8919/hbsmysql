@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 /* app.get('/', (req, res) =>{
     res.send("hello words")
-}) */
+})  */
 
 app.use(morgan('dev'));
 app.use(express.json());
